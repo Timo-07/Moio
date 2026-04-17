@@ -6,17 +6,16 @@ Created on Sun Apr  6 14:01:08 2025
 """
 
 from flask import Flask, render_template
-
-
-
+import os
 
 app = Flask(__name__)
 
-
-
-@app.route('/home', methods = ['GET', 'POST'])
+@app.route('/')
+@app.route('/home', methods=['GET', 'POST'])
 def principal():
-   
     return render_template('base.html')
 
-app.run(host='localhost',  port = 8080)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))  # Render usa variável PORT
+    app.run(host="0.0.0.0", port=port)
