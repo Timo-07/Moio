@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	  
+	  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/bootstrap.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'sass/components/forms/_forms.scss')}}">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'sass/components/_table_of_contents.scss')}}">
+      
+	<title> Moio Weno </title>
+  <style>
+  	body{ background-color: rgb(255,255,255);}
+  	h1 {color: rgb(15, 15,15);}
+  	   .navbar-fixed-top {background-color: rgb(49,181,115);}
+            
+        .link_menu a{color: rgb(255, 255, 255)!important; padding: 10px; font-family: 'Times New Roman', Times, serif; font-size: 18px;}
+        .ids {float: right; background-color: rgb(15,15,15);}
+        .divfoto{background-color: rgb(255, 255, 255);}
+        .bt{ background-color: rgb(49, 181, 155); }
+        .foto{width: 500px; height: 300px;}
+        .h {color: rgb(255, 255, 255);}
+        ul { align-items: center; padding: .5em; margin: 0;}
+        li {margin: 0 1em;}
+        li.logo { margin-right: auto;}
+
+        .logs {width: 60px; height: 30px; float: left;}
+        .contem {background-color: rgb(49, 181, 115); float: left;}
+
+
+  </style>
+</head>
+
+<body>
+       <header>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+               <div class="navbar-header">
+                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span style="background-color: rgb(15, 15, 15);" class="icon-bar"></span>
+                        <span style="background-color: rgb(15, 15, 15);" class="icon-bar"></span>
+                        <span style="background-color: rgb(15, 15, 15);" class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="link_menu"><a href="#" > Home </a></li>
+                        <li class="link_menu"><a href="#"> Sobre</a></li>
+                        <li class="link_menu"><a href="#"> Contactos </a></li>
+                     </ul>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <br>
+
+<form method = "POST" action="/">
+  <input  type="text" name="nome">
+    <input  type="text" name="email">
+      <input  type="text" name="PASSWORD">
+         
+          <div  class="form-group">
+                  <label  for="role">Roles</label>
+                   
+                  <select  class="custom-select" id="role" name="IdRole">
+                    {% for i in pessoa %}
+                          <!--option disabled  selected>Selecione</option-->
+                          <option value="{{i.IdRole}}">{{i.IdRole}}</option>
+                       {% endfor %}
+                  </select>
+                
+
+          </div>
+         
+  <input type="submit" name="Adicionar">
+</form>
+ <h1> NOME </h1>
+   <div id="navegar">
+    <div class="container">
+ 
+        <!-- Criando a tabela -->
+        
+           
+        
+            
+</body>
+
+</html>
